@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -89,20 +90,25 @@ int main() {
 		case '2':
 			// 전체 성적 보기
 
+			// 실수 출력 시에 소수점 이하 두 자리만 표시한다.
+			cout.precision(2);
+			cout << fixed;
+
+			// 타이틀 부분을 출력한다.
 			cout << "\n 전체 성적 보기 \n";
-			cout << "학번 국어 영어 수학 평균\n";
+			cout << "   학번 국어 영어 수학   평균\n";
 
 			// 입력된 학생 수 만큼 반복한다.
 			for (int i = 0; i < number_of_student; i++) {
 				// 알맞은 학생의 정보를 출력한다.
 				if (i == 0) {
-					cout << s1_no << " " << s1_kor << " " << s1_eng << " " << s1_math << " " << s1_ave << "\n";
+					cout << setw(7) << s1_no << setw(5) << s1_kor  << setw(5) << s1_eng << setw(5) << s1_math << setw(7) << s1_ave << "\n";
 				}
 				else if (i == 1) {
-					cout << s2_no << " " << s2_kor << " " << s2_eng << " " << s2_math << " " << s2_ave << "\n";
+					cout << setw(7) << s2_no << setw(5) << s2_kor << setw(5) << s2_eng << setw(5) << s2_math << setw(7) << s2_ave << "\n";
 				}
 				else {
-					cout << s3_no << " " << s3_kor << " " << s3_eng << " " << s3_math << " " << s3_ave << "\n";
+					cout << setw(7) << s3_no << setw(5) << s3_kor << setw(5) << s3_eng << setw(5) << s3_math << setw(7) << s3_ave << "\n";
 				}
 			}
 
